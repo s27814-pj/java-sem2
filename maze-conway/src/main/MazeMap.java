@@ -14,11 +14,7 @@ public class MazeMap {
 		generateMap();
 		
 	}
-	
-	public void pisz() {
-		System.out.println("pisz");
-		
-	}
+
 	
 	public void prepareMap() {
 		
@@ -43,26 +39,18 @@ public class MazeMap {
 		
 		int rand1=rand.nextInt(GamePanel.maxCol/4);
 		int rand2 = rand.nextInt(GamePanel.maxRow/4);
-		//System.out.println(rand1  + " | "+rand2);
 		
 		v.set(0, GamePanel.maxCol-2-(rand1));
 		v.set(1, GamePanel.maxRow-2-(rand2));
 		map[GamePanel.maxCol-2-(rand1)][GamePanel.maxRow-2-(rand2)]=4;
-		//System.out.println(map[GamePanel.maxCol-2-(rand1)][GamePanel.maxRow-2-(rand2)]);
-		//map[10][10]=4;
-		//System.out.println("jeste");
-		
 	}
 	
 	
 	public void generateMap() {
 		
 		prepareMap();
-
-		//setExit();
 		
 		for (int i=0; i<GamePanel.maxCol*4; i++) 	nextGeneration();
-		//ensureMap();
 		if(ensureMap()) generateMap();
 		else setExit();
 		
@@ -105,7 +93,6 @@ public class MazeMap {
                 neighbours -= map[l][m];
  
 
-               // if ((map[l][m] == 1) && (neighbours < 2))
                 if ((map[l][m] == 1) && (neighbours == 0))
                 	next[l][m] = 0;
                 

@@ -16,7 +16,6 @@ public class Player extends Entity {
 	}
 	public void detonateBomb(MazeMap map) {
 		System.out.println("BOOM");
-	//map.getField(bomb.posX, bomb.posY)
 		
 		if (map.getField(lastObjectX-1, lastObjectY)==1) map.setField(lastObjectX-1, lastObjectY, 0);
 		if (map.getField(lastObjectX+1, lastObjectY)==1)map.setField(lastObjectX+1, lastObjectY, 0);
